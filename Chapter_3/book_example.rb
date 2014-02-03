@@ -17,6 +17,10 @@ class BookInStock
 		Integer(price*100 + 0.5)
 	end
 
+	def price_in_cents=(cents)
+		@price = cents / 100
+	end
+
 =begin
 # attr_accessor replaces you
 	def price=(new_price)
@@ -65,7 +69,14 @@ puts "Price = #{book.price}"
 book.price = book.price * 0.75  #discount price
 puts "New price = #{book.price}"
 
-puts "Price in pennies = #{book.price_in_cents}"
+# Testing the price_in_cents
+puts "Price in cents = #{book.price_in_cents}"
+
+# Testing the price_in_cents(arg)
+
+book.price_in_cents = 1000 # This works, but i cannot set and call at the same time
+puts "Calling the getter book.price: #{book.price}"
+puts "I am really surprised that this type of overloading doesn't break anything."
 
 =begin
 Notes:
