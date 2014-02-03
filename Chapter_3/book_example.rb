@@ -1,7 +1,8 @@
 #!/usr/bin/ruby
 class BookInStock
 
-	attr_reader :isbn, :price
+	attr_reader :isbn
+	attr_accessor :price
 
 	def initialize(isbn, price)
 		@isbn = isbn
@@ -12,10 +13,12 @@ class BookInStock
 		"ISBN: #{@isbn}, price #{@price}"
 	end
 
+=begin
+# attr_accessor replaces you
 	def price=(new_price)
 		@price = new_price
 	end
-
+=end
 
 =begin
 # The following code was replaced by
@@ -77,6 +80,12 @@ print # prints string representation (if defined)
 puts # print with a \n
 
 instance variable (variables in a class) # start with @ symbol
+
+attr_reader # read access (getter method)
+
+attr_writer # write access (setter method)
+
+attr_accessor # read and write access
 =end
 
 
