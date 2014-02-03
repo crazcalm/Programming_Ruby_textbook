@@ -8,20 +8,35 @@ class BookInStock
 	def to_s
 		"ISBN: #{@isbn}, price #{@price}"
 	end
+
+	def isbn
+		@isbn
+	end
+
+	def price
+		@price
+	end
 end
 
+# Class instances
 b1 = BookInStock.new("isbn1", 3)
 b2 = BookInStock.new("isbn2", 3.14)
 b3 = BookInStock.new("isbn3", "5.67")
 
-
+# Testing out p method
 p b1
 p b2
 p b3
 
+# Testing out puts method
 puts b1
 puts b2
 puts b3
+
+# Testing getter methods
+book = BookInStock.new("isbn1", 12.34)
+puts "\nISBN = #{book.isbn}"
+puts "Price = #{book.price}"
 
 
 =begin
