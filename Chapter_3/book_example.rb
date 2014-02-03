@@ -13,6 +13,10 @@ class BookInStock
 		"ISBN: #{@isbn}, price #{@price}"
 	end
 
+	def price_in_cents
+		Integer(price*100 + 0.5)
+	end
+
 =begin
 # attr_accessor replaces you
 	def price=(new_price)
@@ -61,6 +65,8 @@ puts "Price = #{book.price}"
 book.price = book.price * 0.75  #discount price
 puts "New price = #{book.price}"
 
+puts "Price in pennies = #{book.price_in_cents}"
+
 =begin
 Notes:
 
@@ -86,6 +92,9 @@ attr_reader # read access (getter method)
 attr_writer # write access (setter method)
 
 attr_accessor # read and write access
+
+prince_in_cents # Should use BigDecimal instead of Float so that
+					      # you do not have to forcibly round things by adding 0.5
 =end
 
 
