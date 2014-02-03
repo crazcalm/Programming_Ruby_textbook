@@ -12,6 +12,11 @@ class BookInStock
 		"ISBN: #{@isbn}, price #{@price}"
 	end
 
+	def price=(new_price)
+		@price = new_price
+	end
+
+
 =begin
 # The following code was replaced by
 # the attr_reader, which is a shortcut for
@@ -49,6 +54,9 @@ book = BookInStock.new("isbn1", 12.34)
 puts "\nISBN = #{book.isbn}"
 puts "Price = #{book.price}"
 
+# Testing the setter method
+book.price = book.price * 0.75  #discount price
+puts "New price = #{book.price}"
 
 =begin
 Notes:
