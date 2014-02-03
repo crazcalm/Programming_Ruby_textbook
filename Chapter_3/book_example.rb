@@ -1,5 +1,8 @@
 #!/usr/bin/ruby
 class BookInStock
+
+	attr_reader :isbn, :price
+
 	def initialize(isbn, price)
 		@isbn = isbn
 		@price = Float(price)
@@ -9,6 +12,11 @@ class BookInStock
 		"ISBN: #{@isbn}, price #{@price}"
 	end
 
+=begin
+# The following code was replaced by
+# the attr_reader, which is a shortcut for
+# creating getters
+
 	def isbn
 		@isbn
 	end
@@ -16,6 +24,9 @@ class BookInStock
 	def price
 		@price
 	end
+
+=end
+
 end
 
 # Class instances
