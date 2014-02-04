@@ -66,6 +66,18 @@ puts "person2 is #{person2}"
 puts "\nperson1 id: #{person1.object_id}" # same id means that they reference the same object.
 puts "person2 id: #{person2.object_id}"
 
+# Testing String.dup
+friend1 = "Marcus"
+friend2 = friend1.dup
+friend1 = friend1.reverse.downcase
+
+puts "\nfriend1 is #{friend1}"
+puts "friend2 is #{friend2}"
+
+
+
+
+
 =begin
 Notes:
 
@@ -81,4 +93,10 @@ Notes:
 5. Correction: variables are not objects. They are references to objects. Check out person example.
 
 6. Strings are mutable!
+
+7. In the person example, you could avoid aliasing by using the dup method of a String (person1.dup),
+   which creates a new string object with identical contents.
+
+8. You can also prevent anyone from changing a particular object by freezing it. Attempt to
+   alter a frozen object, and Ruby will raise a RuntimeError exception.
 =end
